@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video.js Player with Plugins</title>
+
+  <!-- Video.js CSS -->
+  <link href="node_modules/video.js/dist/video-js.css" rel="stylesheet">
+
+  <!-- Video.js Plugins CSS -->
+  <link href="dist/videojs-airplay-master/dist/videojs-airplay.css" rel="stylesheet">
+  <link href="dist/videojs-pip/dist/videojs-pip.css" rel="stylesheet">
+  <link href="dist/videojs-setting-menu-master/src/videojs-settings-menu.css" rel="stylesheet">
+  <link href="dist/videojs-share-master/dist/plugin.css" rel="stylesheet">
+  <link href="dist/video.js-chromecast-master/dist/videojs-chromecast.css" rel="stylesheet">
+  <link href="dist/videojs-hls-quality-selector/src/plugin.css" rel="stylesheet">
+  <link href="dist/videojs-vjsdownload/dist/videojs-vjsdownload.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="video-container">
+    <video
+      id="my-video"
+      class="video-js vjs-default-skin"
+      controls
+      preload="auto"
+      data-setup='{}'
+    >
+      <source src="https://vod.err.ee/hls/gb/5e1cd1fe29d76270688e674b62a68504/2/v/master.m3u8" type="application/x-mpegURL" />
+      <!-- Or add your video source here, like MP4 or WebM -->
+
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a web browser that
+        supports HTML5 video.
+      </p>
+    </video>
+  </div>
+
+  <!-- Video.js Script -->
+  <script src="dist/video.js/dist/video.js"></script>
+
+  <!-- Video.js Plugins Scripts -->
+  <script src="dist/videojs-airplay-master/dist/videojs-airplay.js"></script>
+  <script src="dist/videojs-pip/dist/videojs-pip.js"></script>
+  <script src="dist/videojs-setting-menu-master/src/plugin.js"></script>
+  <script src="dist/videojs-share-master/dist/plugin.js"></script>
+  <script src="dist/videojs-chromecast/dist/videojs-chromecast.js"></script>
+  <script src="dist/videojs-hls-quality-selector-main/src/plugin.js"></script>
+  <script src="dist/videojs-vjsdownload-master/dist/videojs-vjsdownload.js"></script>
+
+  <!-- Optional: HTTP Streaming Plugin (HLS) -->
+  <script src="dist/videojs-http-streaming/dist/videojs-http-streaming.js"></script>
+
+  <script>
+    var player = videojs('my-video', {
+      plugins: {
+        airplay: {},
+        pip: {},
+        settingsMenu: {},
+        share: {},
+        chromecast: {},
+        hlsQualitySelector: {},
+        vjsdownload: {}
+      }
+    });
+  </script>
+
+</
